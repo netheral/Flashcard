@@ -89,10 +89,14 @@ function AddCard() {
       <CardForm frontHandler={frontHandler} backHandler={backHandler} card={card} />
 
       {/* "Done" and "Save" buttons */}
-      <Link to={`/decks/${deckId}`} className="btn btn-secondary">
+      <Link 
+      
+      to={`/decks/${deckId}`} className="btn btn-secondary">
         Done
       </Link>
-      <button onClick={submitHandler} type="submit" className="btn btn-primary">
+      <button 
+      style={{marginLeft: "10px"}}
+      onClick={submitHandler} type="submit" className="btn btn-primary">
         Save
       </button>
     </div>

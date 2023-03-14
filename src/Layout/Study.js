@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 
+
+
+
 function Study({deck}) {
     const history = useHistory(); // for navigating to different pages
     const { deckId } = useParams(); // for getting deck ID from the URL
@@ -42,7 +45,9 @@ function Study({deck}) {
                         <h5>Card {count + 1} of {cardList.length}</h5>
                         <div className="card-text">
                             <p>{cardFront ? currentCard.front : currentCard.back}</p>
-                            <button className="btn btn-secondary" onClick={handleFlip}>
+                            <button 
+                            style={{marginRight: "10px"}}
+                            className="btn btn-secondary" onClick={handleFlip}>
                                 Flip
                             </button>
                             {!cardFront ? <button className="btn btn-primary" onClick={nextButton}>

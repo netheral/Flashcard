@@ -35,7 +35,9 @@ function CardList({ cards }) {
                         </Link>
 
                         {/* button to delete the card */}
-                        <button onClick={async () => {
+                        <button 
+                        style={{marginLeft: "10px"}}
+                        onClick={async () => {
                             if (window.confirm(
                                 "Delete this card? You will not be able to recover it."
                             )) {

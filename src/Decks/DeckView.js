@@ -59,16 +59,22 @@ function DeckView() {
                     <div className="card-title">
                         <h4>{name}</h4>
                         <p className="card-text">{description}</p>
-                        <Link to={`${deckId}/edit`} className="btn btn-secondary">
+                        <Link 
+                        to={`${deckId}/edit`} className="btn btn-secondary">
                             Edit
                         </Link>
-                        <Link to={`/decks/${deckId}/study`} className="btn btn-primary">
+                        <Link 
+                        style={{marginLeft: "10px"}}
+                        to={`/decks/${deckId}/study`} className="btn btn-primary">
                             Study
                         </Link>
-                        <Link to={`/decks/${deckId}/cards/new`} className="btn btn-primary">
+                        <Link 
+                        style={{marginLeft: "10px"}}
+                        to={`/decks/${deckId}/cards/new`} className="btn btn-primary">
                             + Add Cards
                         </Link>
-                        <button onClick={handleDeckDelete} className="btn btn-danger">
+                        <button style={{marginLeft: "10px"}}
+                         onClick={handleDeckDelete} className="btn btn-danger">
                             Delete
                         </button>
                     </div>

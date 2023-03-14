@@ -83,7 +83,9 @@ function CreateDeck() {
                     </Link>
 
                     {/* Submit button */}
-                    <button onClick={submitHandler} type="submit" className="btn btn-primary">
+                    <button 
+                    style={{marginLeft: "10px"}}
+                    onClick={submitHandler} type="submit" className="btn btn-primary">
                         Submit
                     </button>
                 </div>

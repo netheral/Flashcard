@@ -7,10 +7,9 @@ function DeckList({ deck }) {
   const deckLength = cards.length;
   const history = useHistory();
 
-  // Deletes the deck with the given ID and refreshes the page
   const handleDelete = async (id) => {
     const deleteOnClick = window.confirm(
-        "Are you certain you wish to delete this deck? The action is irreversible and the data cannot be recovered."
+      "Are you certain you wish to delete this deck? The action is irreversible and the data cannot be recovered."
     );
     if (deleteOnClick) {
       await deleteDeck(id);
@@ -29,14 +28,18 @@ function DeckList({ deck }) {
         </div>
         <p className="card-text">{description}</p>
         <div className="row px-3">
-          <Link to={`/decks/${id}`} className="btn btn-secondary">
+          <Link          
+          to={`/decks/${id}`} className="btn btn-secondary">
             View
           </Link>
-          <Link to={`/decks/${id}/study`} className="btn btn-primary">
+          <Link 
+          style={{marginLeft: "10px"}}
+          to={`/decks/${id}/study`} className="btn btn-primary">
             Study
           </Link>
           <button
-            onClick={handleDelete}
+            style={{marginLeft: "10px"}}
+            onClick={() => handleDelete(id)}
             name="delete"
             value={id}
             className="btn btn-danger"
