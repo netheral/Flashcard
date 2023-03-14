@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 
-
-
-
 function Study({deck}) {
     const history = useHistory(); // for navigating to different pages
     const { deckId } = useParams(); // for getting deck ID from the URL

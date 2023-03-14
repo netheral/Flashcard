@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { deleteDeck } from "../utils/api/index";
 
-function DeckList({ deck }) {
+function DeckList({ deck, decks, setDecks }) {
   const { id, name, description, cards } = deck;
   const deckLength = cards.length;
   const history = useHistory();
@@ -13,6 +13,8 @@ function DeckList({ deck }) {
     );
     if (deleteOnClick) {
       await deleteDeck(id);
+      const newDecks = decks.filter((deck) => deck.id !== id);
+      setDecks(newDecks);
       history.go(0);
     } else {
       history.go(0);

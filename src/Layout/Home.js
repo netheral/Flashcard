@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { listDecks } from "../utils/api/index";
-
-
-
-
 import DeckList from "../Decks/DeckList";
 
-function Home() {
+function Home(props) {
   const [decks, setDecks] = useState([]);
-  
+
   useEffect(() => {
     async function getDeck() {
       const getDeckFromAPI = await listDecks();
@@ -27,7 +23,7 @@ function Home() {
       </div>
       <div className="row w-100 mx-auto">
         {decks.map((deck) => (
-          <DeckList key={deck.id} deck={deck} />
+          <DeckList key={deck.id} deck={deck} setDecks={setDecks} />
         ))}
       </div>
     </div>
